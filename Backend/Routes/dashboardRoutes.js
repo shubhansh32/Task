@@ -5,7 +5,7 @@ const router = express.Router();
 const {
   getAdminDashboard,
   getMemberDashboard,
-} = require("../Controller/dashboardController");
+} = require("../Controller/dashBoardController");
 
 router.get("/admin", getAdminDashboard);
 
