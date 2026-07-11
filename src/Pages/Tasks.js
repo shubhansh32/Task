@@ -99,6 +99,7 @@ function Tasks() {
                             <tr>
 
                                 <th>Title</th>
+                                <th>Description</th>
 
                                 <th>Assigned To</th>
 
@@ -124,7 +125,7 @@ function Tasks() {
                                         <tr>
 
                                             <td
-                                                colSpan="6"
+                                                colSpan="7"
                                                 style={{
                                                     textAlign: "center",
                                                     padding: "30px"
@@ -147,6 +148,9 @@ function Tasks() {
 
                                             <td>{task.title}</td>
 
+                                                <td className="description">
+    {task.description}
+</td>
                                             <td>
 
                                                 {task.assignedTo?.name || "Not Assigned"}

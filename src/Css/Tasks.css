@@ -135,5 +135,14 @@
     padding:11px;
     font-size:14px;
 }
+.description{
+
+    max-width:250px;
+
+    white-space:normal;
+
+    word-wrap:break-word;
+
+}
 
 }
