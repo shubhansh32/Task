@@ -16,95 +16,68 @@ function EditTask() {
         assignedTo: "",
         priority: "Medium",
         status: "Pending",
-        dueDate: ""
+        dueDate: "",
     });
 
     useEffect(() => {
 
+        const fetchTask = async () => {
+
+            try {
+
+                const res = await API.get(`/tasks/${id}`);
+
+                const data = res.data.task;
+
+                setTask({
+                    title: data.title,
+                    description: data.description,
+                    assignedTo: data.assignedTo?._id || "",
+                    priority: data.priority,
+                    status: data.status,
+                    dueDate: data.dueDate
+                        ? data.dueDate.substring(0, 10)
+                        : "",
+                });
+
+            } catch (error) {
+
+                console.log(error);
+                alert("Unable to fetch task");
+
+            }
+
+        };
+
+        const fetchUsers = async () => {
+
+            try {
+
+                const res = await API.get("/users");
+
+                setUsers(res.data.users);
+
+            } catch (error) {
+
+                console.log(error);
+
+            }
+
+        };
+
         fetchTask();
         fetchUsers();
 
-    }, []);
-
-    // ============================
-    // Fetch Task
-    // ============================
-
-    const fetchTask = async () => {
-
-        try {
-
-            const res = await API.get(`/tasks/${id}`);
-
-            const data = res.data.task;
-
-            setTask({
-
-                title: data.title,
-
-                description: data.description,
-
-                assignedTo: data.assignedTo?._id || "",
-
-                priority: data.priority,
-
-                status: data.status,
-
-                dueDate: data.dueDate
-                    ? data.dueDate.substring(0,10)
-                    : ""
-
-            });
-
-        } catch (error) {
-
-            console.log(error);
-
-            alert("Unable to fetch task");
-
-        }
-
-    };
-
-    // ============================
-    // Fetch Users
-    // ============================
-
-    const fetchUsers = async () => {
-
-        try {
-
-            const res = await API.get("/users");
-
-            setUsers(res.data.users);
-
-        } catch (error) {
-
-            console.log(error);
-
-        }
-
-    };
-
-    // ============================
-    // Handle Input
-    // ============================
+    }, [id]);
 
     const handleChange = (e) => {
 
         setTask({
-
             ...task,
-
-            [e.target.name]: e.target.value
-
+            [e.target.name]: e.target.value,
         });
 
     };
-
-    // ============================
-    // Update Task
-    // ============================
 
     const updateTask = async (e) => {
 
@@ -137,123 +110,66 @@ function EditTask() {
             <form onSubmit={updateTask}>
 
                 <input
-
                     type="text"
-
                     name="title"
-
                     value={task.title}
-
                     onChange={handleChange}
-
                     placeholder="Task Title"
-
                     required
-
                 />
 
                 <textarea
-
                     name="description"
-
                     value={task.description}
-
                     onChange={handleChange}
-
                     placeholder="Description"
-
                     required
-
                 />
 
                 <select
-
                     name="assignedTo"
-
                     value={task.assignedTo}
-
                     onChange={handleChange}
-
                     required
-
                 >
-
                     <option value="">Assign User</option>
 
-                    {
-
-                        users.map((user)=>(
-
-                            <option
-
-                                key={user._id}
-
-                                value={user._id}
-
-                            >
-
-                                {user.name}
-
-                            </option>
-
-                        ))
-
-                    }
-
+                    {users.map((user) => (
+                        <option key={user._id} value={user._id}>
+                            {user.name}
+                        </option>
+                    ))}
                 </select>
 
                 <select
-
                     name="priority"
-
                     value={task.priority}
-
                     onChange={handleChange}
-
                 >
-
                     <option value="Low">Low</option>
-
                     <option value="Medium">Medium</option>
-
                     <option value="High">High</option>
-
                 </select>
 
                 <select
-
                     name="status"
-
                     value={task.status}
-
                     onChange={handleChange}
-
                 >
-
                     <option value="Pending">Pending</option>
-
                     <option value="In Progress">In Progress</option>
-
                     <option value="Completed">Completed</option>
-
                 </select>
 
                 <input
-
                     type="date"
-
                     name="dueDate"
-
                     value={task.dueDate}
-
                     onChange={handleChange}
-
                 />
 
                 <button type="submit">
-
                     Update Task
-
                 </button>
 
             </form>
