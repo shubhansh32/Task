@@ -1,0 +1,119 @@
+/* ===========================
+   Navbar
+=========================== */
+
+.navbar{
+    background:#ffffff;
+    padding:20px 25px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:20px;
+}
+
+/* Welcome Text */
+
+.navbar h2{
+    margin:0;
+    font-size:30px;
+    color:#1e293b;
+    font-weight:600;
+}
+
+/* Right Side */
+
+.navbar-right{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.navbar-right img{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.navbar-right button{
+    padding:10px 18px;
+    background:#2563eb;
+    color:#fff;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.navbar-right button:hover{
+    background:#1d4ed8;
+}
+
+/* ===========================
+   Tablet
+=========================== */
+
+@media screen and (max-width:992px){
+
+.navbar{
+    padding:18px;
+}
+
+.navbar h2{
+    font-size:26px;
+}
+
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media screen and (max-width:768px){
+
+.navbar{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:15px;
+}
+
+.navbar h2{
+    font-size:22px;
+}
+
+.navbar-right{
+    width:100%;
+    justify-content:space-between;
+}
+
+}
+
+/* ===========================
+   Small Mobile
+=========================== */
+
+@media screen and (max-width:480px){
+
+.navbar{
+    padding:15px;
+}
+
+.navbar h2{
+    font-size:20px;
+}
+
+.navbar-right button{
+    padding:8px 12px;
+    font-size:14px;
+}
+
+.navbar-right img{
+    width:40px;
+    height:40px;
+}
+
+}

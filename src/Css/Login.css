@@ -1,0 +1,141 @@
+/* ===========================
+   Body
+=========================== */
+
+body{
+    margin:0;
+    padding:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#edf2f7;
+}
+
+/* ===========================
+   Login Container
+=========================== */
+
+.login{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+/* ===========================
+   Login Box
+=========================== */
+
+.login-box{
+    width:100%;
+    max-width:420px;
+    background:#fff;
+    padding:40px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+/* ===========================
+   Heading
+=========================== */
+
+.login-box h1{
+    text-align:center;
+    margin-bottom:30px;
+    color:#1e293b;
+}
+
+/* ===========================
+   Inputs
+=========================== */
+
+.login-box input{
+    width:100%;
+    padding:14px;
+    margin-bottom:18px;
+    border:1px solid #d1d5db;
+    border-radius:8px;
+    outline:none;
+    font-size:15px;
+    box-sizing:border-box;
+    transition:0.3s;
+}
+
+.login-box input:focus{
+    border-color:#2563eb;
+    box-shadow:0 0 5px rgba(37,99,235,.3);
+}
+
+/* ===========================
+   Button
+=========================== */
+
+.login-box button{
+    width:100%;
+    padding:14px;
+    border:none;
+    background:#2563eb;
+    color:white;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.login-box button:hover{
+    background:#1d4ed8;
+    transform:translateY(-2px);
+}
+
+/* ===========================
+   Tablet
+=========================== */
+
+@media screen and (max-width:768px){
+
+.login{
+    padding:15px;
+}
+
+.login-box{
+    max-width:380px;
+    padding:30px;
+}
+
+.login-box h1{
+    font-size:30px;
+}
+
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media screen and (max-width:480px){
+
+.login{
+    padding:15px;
+}
+
+.login-box{
+    width:100%;
+    padding:25px 20px;
+    border-radius:10px;
+}
+
+.login-box h1{
+    font-size:26px;
+    margin-bottom:25px;
+}
+
+.login-box input{
+    padding:12px;
+    font-size:14px;
+}
+
+.login-box button{
+    padding:12px;
+    font-size:15px;
+}
+
+}

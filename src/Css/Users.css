@@ -1,0 +1,173 @@
+/* ===========================
+   Users Container
+=========================== */
+
+.user-container{
+    background:#ffffff;
+    margin-top:20px;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    overflow-x:auto;
+}
+
+/* ===========================
+   Header
+=========================== */
+
+.user-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+    gap:15px;
+}
+
+.user-header h2{
+    margin:0;
+    color:#1e293b;
+    font-size:28px;
+}
+
+/* ===========================
+   Add User Button
+=========================== */
+
+.user-header button{
+    background:#2563eb;
+    color:#fff;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.user-header button:hover{
+    background:#1d4ed8;
+    transform:translateY(-2px);
+}
+
+/* ===========================
+   Table
+=========================== */
+
+table{
+    width:100%;
+    min-width:800px;
+    border-collapse:collapse;
+}
+
+th{
+    background:#f8fafc;
+    color:#1e293b;
+    font-weight:600;
+}
+
+th,
+td{
+    padding:15px;
+    text-align:left;
+    border-bottom:1px solid #e5e7eb;
+}
+
+tr:hover{
+    background:#f9fafb;
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.edit{
+    background:#10b981;
+    color:#fff;
+    border:none;
+    padding:8px 15px;
+    border-radius:6px;
+    cursor:pointer;
+    margin-right:10px;
+    transition:.3s;
+}
+
+.edit:hover{
+    background:#059669;
+}
+
+.delete{
+    background:#ef4444;
+    color:#fff;
+    border:none;
+    padding:8px 15px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.delete:hover{
+    background:#dc2626;
+}
+
+/* ===========================
+   Tablet
+=========================== */
+
+@media screen and (max-width:768px){
+
+.user-container{
+    padding:18px;
+}
+
+.user-header{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.user-header h2{
+    font-size:24px;
+}
+
+.user-header button{
+    width:100%;
+}
+
+table{
+    min-width:700px;
+}
+
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media screen and (max-width:480px){
+
+.user-container{
+    padding:15px;
+}
+
+.user-header h2{
+    font-size:22px;
+}
+
+.user-header button{
+    padding:10px;
+    font-size:14px;
+}
+
+th,
+td{
+    padding:12px;
+    font-size:14px;
+}
+
+.edit,
+.delete{
+    padding:7px 12px;
+    font-size:13px;
+}
+
+}
