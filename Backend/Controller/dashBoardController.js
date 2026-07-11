@@ -1,5 +1,5 @@
-const Task = require("../models/TaskModel");
-const User = require("../models/UserModel");
+const Task = require("../Models/TaskModel");
+const User = require("../Models/UserModel");
 
 // ===================================
 // Admin Dashboard
